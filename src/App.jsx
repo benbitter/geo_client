@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 
-const socket = io(toString(import.meta.env.VITE_BACKEND_URL));
+const socket = io("https://geo-server-676h.onrender.com");
 
 const getRoomFromCoords = (latitude, longitude) => {
   const lat = latitude.toFixed(3);
