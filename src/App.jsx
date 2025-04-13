@@ -30,14 +30,16 @@ function App() {
         setLocation(coords);
 
         const room = getRoomFromCoords(coords.latitude, coords.longitude);
-        socket.emit('join-room', coords.latitude);
+        console.log(coords.latitude.toFixed(0));
+        socket.emit('join-room', coords.latitude.toFixed(0));
       },
       (err) => {
         setError('Error retrieving location: ' + err.message);
       }
     );
   }, []);
-  console.log(location);
+  // console.log(coords.latitude);
+  // console.log(location);
 
   useEffect(() => {
     socket.on('chat-message', (data) => {
